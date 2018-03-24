@@ -2,7 +2,6 @@ import React from 'react';
 import { ScrollView, ListView, View, StyleSheet, Text } from 'react-native';
 import { connect } from 'react-redux'
 
-import { MonoText } from '../../components/StyledText';
 import { getEntities } from '../../api/movie.reducer'
 
 const ds = new ListView.DataSource({ rowHasChanged: (row1, row2) => row1 !== row2 });
@@ -38,8 +37,8 @@ class MovieList extends React.Component {
 
     render() {
         return (
-           this.state.isLoading ? <View><MonoText>Loading...</MonoText></View>
-               : <ListView dataSource={this.state.dataSource} renderRow={(movie) => <MonoText>{movie.title}</MonoText>} />
+           this.state.isLoading ? <View><Text>Loading...</Text></View>
+               : <ListView dataSource={this.state.dataSource} renderRow={(movie) => <Text>{movie.title}</Text>} />
         );
     }
 }
